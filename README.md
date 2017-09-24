@@ -1,2 +1,2 @@
 # AtntHackathon
-Push your codes here. Create directory under your name
+The App will say BlessYou when you sneeze. No more humans needed
