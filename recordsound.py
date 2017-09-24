@@ -2,7 +2,7 @@ import pyaudio
 from pyAudioAnalysis import audioTrainTest as aT
 import wave
 import subprocess
-for i in range(100):
+for i in range(1000):
     FORMAT = pyaudio.paInt16
     CHANNELS = 2
     RATE = 44100
@@ -40,9 +40,11 @@ for i in range(100):
 #    prediction = aT.fileClassification('file.wav', './model/GBoostSneezer','gradientboosting')
     prediction = aT.fileClassification('file.wav', './model/RFSneezer','randomforest')
     print(prediction)
-    if prediction[1][0] > .783:
+    if prediction[1][0] > .76:
         subprocess.call(["afplay","./blessyou.wav"])
         print("Sneezing")
     else:
         print("NotSneezing")
+    print("=================================")
+    print("\n\n")
     #prediction = aT.fileClassification('file.wav', './model/svmSMSnorer','svm')
